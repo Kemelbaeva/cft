@@ -6,7 +6,7 @@ class DBWorker:
     This class work with data base sqlite3
     """
     def __init__(self, db_name):
-        self.connection = sqlite3.connect(db_name)
+        self.connection = sqlite3.connect('resources/' + db_name)
         self.cursor = self.connection.cursor()
         self.cursor.execute("""
         CREATE TABLE if not exists Car (id INTEGER PRIMARY KEY AUTOINCREMENT, year INTEGER, model TEXT, producer TEXT, 
